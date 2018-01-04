@@ -79,7 +79,7 @@ flying_boat2's version: 15
 ```
 
 ## Usage
-Copy lunarclasses.lua anywhere you want, then write this to include the module:
+Copy lunarclasses.lua to your project folder, then write this to include the module:
 ```
 require "lunarclasses"
 ```
