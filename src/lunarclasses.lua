@@ -1,7 +1,7 @@
 lunarclasses = {}
 
 local function search(field, parent_classes)    
-    for k, class in pairs(parent_classes) do
+    for _, class in pairs(parent_classes) do
         local in_class_field = class[field]
         if in_class_field then
             return in_class_field
