@@ -49,7 +49,7 @@ print("Owner: " .. flying_boat.owner)  -- inherited from Vehicle
 flying_boat.super[1].action()  -- Boat's version of action()
 
 
-flying_boat2 = Flying_Boat:new()
+flying_boat2 = Flying_Boat()  -- you can also create instances of classes like this
 flying_boat2.static.count = 15
 
 print("flying_boat's version: " .. flying_boat.static.count)
