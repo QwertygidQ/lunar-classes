@@ -19,23 +19,24 @@ function lunarclasses.create_class(parent_classes, constructor)
     parent_classes = parent_classes or {}
     
     class = {super=parent_classes, static={}}
-    setmetatable(class, {__index =
-                            function(table, field)
-                                local in_class_field = search(field, parent_classes)
-                                table[field] = in_class_field
-                                return in_class_field
-                            end
-                        })
-    class.__index = class
     
-    constructor = constructor or
+    class.new = constructor or
         function(self, o)
             o = o or {}
             setmetatable(o, class)
             return o
         end
-    
-    class.new = constructor
+
+    setmetatable(class, {__index =
+                            function(table, field)
+                                local in_class_field = search(field, parent_classes)
+                                table[field] = in_class_field
+                                return in_class_field
+                            end,
+                        __call = class.new
+                        })
+                
+    class.__index = class
     
     return class
 end
