@@ -45,11 +45,9 @@ flying_boat:capacity()                 -- inherited from Boat
 flying_boat:max_speed()                -- inherited from Airplane
 print("Owner: " .. flying_boat.owner)  -- inherited from Vehicle
 
-
 flying_boat.super[1].action()  -- Boat's version of action()
 
-
-flying_boat2 = Flying_Boat()  -- you can also create instances of classes like this
+flying_boat2 = Flying_Boat()  -- you can create instances of classes like this as well
 flying_boat2.static.count = 15
 
 print("flying_boat's version: " .. flying_boat.static.count)
